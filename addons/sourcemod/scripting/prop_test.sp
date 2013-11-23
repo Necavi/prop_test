@@ -22,8 +22,8 @@ public OnPluginStart()
 {
 	CreateConVar("sm_proptest_version", VERSION, "", FCVAR_PLUGIN);
 	CreateConVar("sm_proptest_build", BUILD, "", FCVAR_PLUGIN);
-	RegConsoleCmd("set_ent_prop", Command_SetEntProp, "set_ent_prop <entity> <prop> <value> - sets the value of an entity property (use -1 to target yourself)");
-	RegConsoleCmd("get_ent_prop", Command_GetEntProp, "get_ent_prop <entity> <prop> - gets the value of an entity property (use -1 to target yourself)");
+	RegAdminCmd("set_ent_prop", Command_SetEntProp, ADMFLAG_CUSTOM3, "set_ent_prop <entity> <prop> <value> - sets the value of an entity property (use -1 to target yourself)");
+	RegAdminCmd("get_ent_prop", Command_GetEntProp, ADMFLAG_CUSTOM3, "get_ent_prop <entity> <prop> - gets the value of an entity property (use -1 to target yourself)");
 }
 public Action:Command_GetEntProp(client, args)
 {
